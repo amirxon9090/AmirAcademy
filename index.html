@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O'quv Markaz</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+
+            <img src="logo.png" width="230px" alt="">
+
+
+        </ul>
+    </nav>
+
+    <div class="form-container">
+        <h2>O'quvchi Qoshish</h2>
+       
+     
+        <div class="name-row">
+            <input id="fname" type="text" placeholder="Ism">
+            <input id="lname" type="text" placeholder="Familya">
+          </div>
+
+        <select id="kurs">
+            <option value="">Kursni tanlang</option>
+            <option value="Ingliz">Ingliz tili</option>
+            <option value="Matematika">Matematika</option>
+            <option value="Frontend">Frontend</option>
+            <option value="Backend">Backend</option>
+            <option value="Biologiya">Biologiya</option>
+            <option value="Kimyo">Kimyo</option>
+
+        </select>
+
+
+        <label>Tug'ilgan sana:</label>
+        <input type="date" id="tugilgan">
+        <input type="text" id="telefon" placeholder="Telefon">
+        <select id="kun">
+            <option value="Toq">Toq kun</option>
+            <option value="Juft">Juft kun</option>
+        </select>
+
+        <button onclick="addStudent()">Qo'shish</button>
+    </div>
+
+
+    <div class="students-container">
+
+        <div id="students"></div>
+    </div>
+
+    <script src="app.js">
+
+    </script>
+
+</body>
+
+</html>
