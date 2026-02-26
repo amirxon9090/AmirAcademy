@@ -22,12 +22,26 @@
 
     <div class="form-container">
         <h2>O'quvchi Qoshish</h2>
-       
-     
+
+
         <div class="name-row">
-            <input id="fname" type="text" placeholder="Ism">
-            <input id="lname" type="text" placeholder="Familya">
-          </div>
+            <input id="fname" type="text" placeholder="Ism Familya">
+
+        </div>
+        <select id="jins">
+            <option value="">Jinsni tanlang</option>
+            <option value="Erkak">Erkak</option>
+            <option value="Ayol">Ayol</option>
+        </select>
+
+        <select id="vaqt">
+            <option value="">Kelish vaqtni tanlang</option>
+
+            <option value="9:00-11:00">9:00-11:00</option>
+            <option value="11:00-13:00">11:00-13:00</option>
+            <option value="14:00-16:00">14:00-16:00</option>
+            <option value="16:00-18:00">16:00-18:00</option>
+        </select>
 
         <select id="kurs">
             <option value="">Kursni tanlang</option>
@@ -41,15 +55,16 @@
         </select>
 
 
-        <label>Tug'ilgan sana:</label>
+
         <input type="date" id="tugilgan">
         <input type="text" id="telefon" placeholder="Telefon">
         <select id="kun">
+            <option value="">Qaysi kuni keladi</option>
             <option value="Toq">Toq kun</option>
             <option value="Juft">Juft kun</option>
         </select>
 
-        <button onclick="addStudent()">Qo'shish</button>
+        <button class="button1" onclick="addStudent()">Qo'shish</button>
     </div>
 
 

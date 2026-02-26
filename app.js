@@ -1,4 +1,4 @@
-function yoshi(birthDate){
+function yoshi(birthDate) {
     const today = new Date();
     const birth = new Date(birthDate);
     let age = today.getFullYear() - birth.getFullYear();
@@ -10,15 +10,17 @@ function yoshi(birthDate){
     return age;
 }
 
-function addStudent(){
+function addStudent() {
     const ism = document.getElementById("fname").value;
-    const familya = document.getElementById("lname").value;
     const kurs = document.getElementById("kurs").value;
     const tugilgan = document.getElementById("tugilgan").value;
     const telefon = document.getElementById("telefon").value;
     const kun = document.getElementById("kun").value;
+    const jins = document.getElementById("jins").value;
+    const vaqt = document.getElementById("vaqt").value;
 
-  
+
+
 
     const yosh = yoshi(tugilgan);
 
@@ -28,23 +30,35 @@ function addStudent(){
     card.className = "card";
 
     card.innerHTML = `
-        <strong>${ism} ${familya}</strong><br><br>
-        Kurs: ${kurs}<br>
-        Yoshi: ${yosh}<br>
-        Telefon: ${telefon}<br>
-        Kun: ${kun}
+        ${ism}<br><br>
+         Yoshi: ${yosh}<br>
+         Jins: ${jins}<br>
+         Telefon: ${telefon}<br>
+         Kurs: ${kurs}<br>
+         Kun: ${kun}<br>
+         kelish vaqti: ${vaqt}<br>
+     
+    
+       
+      
+       
+   
+
+        
         <button class="delete-btn">O'chirish</button>
     `;
 
-    card.querySelector("button").onclick = function(){
+    card.querySelector("button").onclick = function () {
         card.remove();
     };
 
     container.appendChild(card);
 
-    document.getElementById("fname").value="";
-    document.getElementById("lname").value="";
-    document.getElementById("kurs").value="";
-    document.getElementById("tugilgan").value="";
-    document.getElementById("telefon").value="";
+    document.getElementById("fname").value = "";
+    document.getElementById("kurs").value = "";
+    document.getElementById("tugilgan").value = "";
+    document.getElementById("telefon").value = "";
+    document.getElementById("jins").value = "";
+    document.getElementById("vaqt").value = "";
+
 }
