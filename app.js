@@ -1,6 +1,9 @@
 function yoshi(birthDate) {
     const today = new Date();
     const birth = new Date(birthDate);
+
+    if (birth > today) return 0;
+
     let age = today.getFullYear() - birth.getFullYear();
     const m = today.getMonth() - birth.getMonth();
 
@@ -8,6 +11,14 @@ function yoshi(birthDate) {
         age--;
     }
     return age;
+}
+
+
+document.addEventListener("DOMContentLoaded", loadStudents);
+
+function loadStudents() {
+    const students = JSON.parse(localStorage.getItem("students")) || [];
+    students.forEach(student => createCard(student));
 }
 
 function addStudent() {
@@ -19,46 +30,68 @@ function addStudent() {
     const jins = document.getElementById("jins").value;
     const vaqt = document.getElementById("vaqt").value;
 
+    if (!ism || !kurs || !tugilgan || !telefon) {
+        alert("Iltimos barcha maydonlarni to‘ldiring!");
+        return;
+    }
 
-
-
-    const yosh = yoshi(tugilgan);
-
-    const container = document.getElementById("students");
-
-    const card = document.createElement("div");
-    card.className = "card";
-
-    card.innerHTML = `
-        ${ism}<br><br>
-         Yoshi: ${yosh}<br>
-         Jins: ${jins}<br>
-         Telefon: ${telefon}<br>
-         Kurs: ${kurs}<br>
-         Kun: ${kun}<br>
-         kelish vaqti: ${vaqt}<br>
-     
-    
-       
-      
-       
-   
-
-        
-        <button class="delete-btn">O'chirish</button>
-    `;
-
-    card.querySelector("button").onclick = function () {
-        card.remove();
+    const student = {
+        id: Date.now(), 
+        ism,
+        kurs,
+        tugilgan,
+        telefon,
+        kun,
+        jins,
+        vaqt
     };
 
-    container.appendChild(card);
+   
+    const students = JSON.parse(localStorage.getItem("students")) || [];
+    students.push(student);
+    localStorage.setItem("students", JSON.stringify(students));
 
+    createCard(student);
+
+    
     document.getElementById("fname").value = "";
     document.getElementById("kurs").value = "";
     document.getElementById("tugilgan").value = "";
     document.getElementById("telefon").value = "";
     document.getElementById("jins").value = "";
     document.getElementById("vaqt").value = "";
+}
 
+function createCard(student) {
+    const container = document.getElementById("students");
+    const yosh = yoshi(student.tugilgan);
+
+    const card = document.createElement("div");
+    card.className = "card";
+
+    card.innerHTML = `
+        <strong>${student.ism}</strong><br><br>
+        Yoshi: ${yosh}<br>
+        Jins: ${student.jins}<br>
+        Telefon: ${student.telefon}<br>
+        Kurs: ${student.kurs}<br>
+        Kun: ${student.kun}<br>
+        Kelish vaqti: ${student.vaqt}<br><br>
+        <button class="delete-btn">O'chirish</button>
+    `;
+
+   
+    card.querySelector("button").onclick = function () {
+        deleteStudent(student.id);
+        card.remove();
+    };
+
+    container.appendChild(card);
+}
+
+
+function deleteStudent(id) {
+    let students = JSON.parse(localStorage.getItem("students")) || [];
+    students = students.filter(student => student.id !== id);
+    localStorage.setItem("students", JSON.stringify(students));
 }
