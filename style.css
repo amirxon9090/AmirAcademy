@@ -10,16 +10,15 @@ body {
 
 
 .students-container {
-    max-width: 1200px;
-    margin: 40px auto;
+    max-width: 100%;
+    margin-top: 90px;
+    margin-left: 10px;
+    margin-right: 10px;
+  
 }
 
 
-#students {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
-}
+
 
 .name-row {
     display: flex;
@@ -40,7 +39,7 @@ body {
 
 #fname {
     position: absolute;
-    width: 12.8%;
+    width: 8%;
     left: 2%;
     padding: 10px;
 
@@ -50,46 +49,46 @@ body {
 #kurs {
     padding: 10px;
     position: absolute;
-    width: 14%;
-    left: 35%;
+    width: 8.5%;
+    left: 24.5%;
 }
 
 #tugilgan {
     position: absolute;
-    width: 14%;
-    left: 18%;
+    width: 8%;
+    left: 13%;
     padding: 10px;
 
 }
 
 #kun {
     position: absolute;
-    width: 14%;
-    left: 50.8%;
+    width: 8%;
+    left: 35%;
     padding: 10px;
 }
 
 #vaqt {
     position: absolute;
-    width: 14%;
-    left: 66.6%;
+    width: 8%;
+    left: 45%;
 
     padding: 10px;
 }
 
 #telefon {
     position: absolute;
-    width: 14%;
-    left: 18%;
-    top: 140px;
+    width: 8%;
+    left: 55%;
+  
     padding: 10px;
 }
 
 #jins {
     position: absolute;
-    width: 14%;
-    left: 2%;
-    top: 140px;
+    width: 8.5%;
+    left: 66%;
+  
     padding: 10px;
 }
 
@@ -130,12 +129,13 @@ input {
     border-width: 2.5px;
     border-color: #000000;
     border-width: 2.5px;
+    border-radius: 5px;
 
 }
 
 select:focus {
     outline: none;
-    border-color: #ff0000;
+    border-color: #000000;
     transition: 900ms;
   
 
@@ -144,7 +144,7 @@ select:focus {
 
 input:focus {
     outline: none;
-    border-color: #ff0000;
+    border-color: #000000;
     transition: 500ms;
    
 }
@@ -156,17 +156,18 @@ select {
     margin: 6px 0;
     border-color: #000000;
     border-width: 2.5px;
+     border-radius: 5px;
 }
 
 .button1 {
-    padding: 12px 60px;
+    padding: 10px 20px;
     background: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 10%;
-    margin-top: 12%;
+    margin-left: 75%;
+    margin-top: 0.4%;
 }
 
 button {
@@ -176,6 +177,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 10%;
 
 }
 
@@ -197,9 +199,10 @@ button:hover {
 }
 
 .delete-btn {
-    margin-top: 10px;
+    position: relative;
+    margin-top: 0px;
     background: rgb(105, 0, 0);
-    width: 100%;
+    margin-left: 90%;
 }
 
 

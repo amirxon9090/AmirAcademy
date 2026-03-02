@@ -30,10 +30,7 @@ function addStudent() {
     const jins = document.getElementById("jins").value;
     const vaqt = document.getElementById("vaqt").value;
 
-    if (!ism || !kurs || !tugilgan || !telefon) {
-        alert("Iltimos barcha maydonlarni to‘ldiring!");
-        return;
-    }
+  
 
     const student = {
         id: Date.now(), 
@@ -45,6 +42,9 @@ function addStudent() {
         jins,
         vaqt
     };
+
+
+    if (!ism || !kurs || !tugilgan || !telefon) { alert("Iltimos barcha maydonlarni to‘ldiring!"); return; }
 
    
     const students = JSON.parse(localStorage.getItem("students")) || [];
@@ -70,13 +70,13 @@ function createCard(student) {
     card.className = "card";
 
     card.innerHTML = `
-        <strong>${student.ism}</strong><br><br>
-        Yoshi: ${yosh}<br>
-        Jins: ${student.jins}<br>
-        Telefon: ${student.telefon}<br>
-        Kurs: ${student.kurs}<br>
-        Kun: ${student.kun}<br>
-        Kelish vaqti: ${student.vaqt}<br><br>
+        <strong>${student.ism}</strong>     /  /
+        Yoshi: ${yosh}  /
+        Jins: ${student.jins}  /
+        Telefon: ${student.telefon}  /
+        Kurs: ${student.kurs}  /
+        Kun: ${student.kun}  /
+        Kelish vaqti: ${student.vaqt}
         <button class="delete-btn">O'chirish</button>
     `;
 
@@ -95,3 +95,5 @@ function deleteStudent(id) {
     students = students.filter(student => student.id !== id);
     localStorage.setItem("students", JSON.stringify(students));
 }
+
+
